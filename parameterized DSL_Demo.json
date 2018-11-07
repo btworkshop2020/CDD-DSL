@@ -1,0 +1,249 @@
+{
+	"objects": [{
+		"application": "Local|Mobile",
+		"name": "${ApplicationVersion_Mobile}",
+		"kind": "ApplicationVersion"
+	},
+	{
+		"application": "Local|Web",
+		"name": "${ApplicationVersion_Web}",
+		"kind": "ApplicationVersion"
+	},
+	{
+		"application": "Local|Billing",
+		"name": "${ApplicationVersion_Billing}",
+		"kind": "ApplicationVersion"
+	},
+	{
+		"applicationVersion": "Local|web/${ApplicationVersion_Web}",
+		"name": "Jira (copy)",
+		"kind": "ContentSource",
+		"plugin": "Jira/1.2",
+		"endpoint": "Jira",
+		"parameters": {
+			"query": "project=\"Agile\" and Status=\"Backlog\""
+		},
+		"type": "JIRA JQL"
+	},
+	{
+		"applicationVersion": "Local|Billing/${ApplicationVersion_Billing}",
+		"name": "Jira (copy)",
+		"kind": "ContentSource",
+		"plugin": "Jira/1.2",
+		"endpoint": "Jira",
+		"parameters": {
+			"query": "Project=\"Mobile Banking\""
+		},
+		"type": "JIRA JQL"
+	},
+	{
+		"applicationVersion": "Local|Mobile/${ApplicationVersion_Mobile}",
+		"name": "Jira (copy)",
+		"kind": "ContentSource",
+		"plugin": "Jira/1.2",
+		"endpoint": "Jira",
+		"parameters": {
+			"query": "Project=\"Web\""
+		},
+		"type": "JIRA JQL"
+	},
+	{
+		"applicationVersions": ["Local|web/${ApplicationVersion_Web}",
+		"Local|Billing/${ApplicationVersion_Billing}",
+		"Local|Mobile/${ApplicationVersion_Mobile}"],
+		"ownerParties": ["ashlomitest@gmail.com",
+		"ashlomitest2@gmail.com"],
+		"version": "${RELEASE_VERSION}",
+		"name": "${RELEASE_NAME}",
+		"kind": "Release"
+	},
+	{
+		"release": "${RELEASE_NAME}/${RELEASE_VERSION}",
+		"scope": "RELEASE_SCOPE",
+		"value": "CHG0034210",
+		"name": "changeRequestId",
+		"kind": "ReleaseToken"
+	},
+	{
+		"release": "${RELEASE_NAME}/${RELEASE_VERSION}",
+		"scope": "PHASE_SCOPE",
+		"value": "CTASK0030098",
+		"name": "changeTaskId",
+		"kind": "ReleaseToken"
+	},
+	{
+		"release": "${RELEASE_NAME}/${RELEASE_VERSION}",
+		"scope": "RELEASE_SCOPE",
+		"value": "20180805-Demo",
+		"name": "releaseName",
+		"kind": "ReleaseToken"
+	},
+	{
+		"release": "${RELEASE_NAME}/${RELEASE_VERSION}",
+		"scope": "RELEASE_SCOPE",
+		"value": "1",
+		"name": "releaseVersion",
+		"kind": "ReleaseToken"
+	},
+	{
+		"isApprovalRequired": false,
+		"approvalGate": "MANUAL",
+		"skipTasksWithUnchangedApplications": false,
+		"release": "${RELEASE_NAME}/${RELEASE_VERSION}",
+		"environments": ["Dev"],
+		"name": "Dev",
+		"kind": "Phase"
+	},
+	{
+		"isApprovalRequired": false,
+		"approvalGate": "MANUAL",
+		"skipTasksWithUnchangedApplications": false,
+		"previousPhase": "Dev",
+		"release": "${RELEASE_NAME}/${RELEASE_VERSION}",
+		"environments": ["Quality"],
+		"name": "Test",
+		"kind": "Phase"
+	},
+	{
+		"isApprovalRequired": false,
+		"approvalGate": "MANUAL",
+		"skipTasksWithUnchangedApplications": false,
+		"previousPhase": "Test",
+		"release": "${RELEASE_NAME}/${RELEASE_VERSION}",
+		"environments": ["Production"],
+		"name": "Prodution",
+		"kind": "Phase"
+	},
+	{
+		"phase": "${RELEASE_NAME}/${RELEASE_VERSION}/Dev",
+		"isDisabled": false,
+		"name": "Create Change Request",
+		"kind": "Task",
+		"plugin": "ServiceNow/2.1",
+		"endpoint": "SNOW-Admin",
+		"parameters": {
+			"changeRequestId": "%changeRequestId%",
+			"shortDescription": "New Build deployment"
+		},
+		"type": "Create Change Request"
+	},
+	{
+		"phase": "${RELEASE_NAME}/${RELEASE_VERSION}/Dev",
+		"previousTasks": ["Create Change Request"],
+		"isDisabled": false,
+		"name": "Deploy Applications",
+		"kind": "Task",
+		"plugin": "TestTask/1.0",
+		"endpoint": "Test Plugin",
+		"parameters": {
+			"detailed-status": "very good",
+			"shall-fail": "false",
+			"number-iterations": "1",
+			"status": "good"
+		},
+		"type": "Run Test"
+	},
+	{
+		"phase": "${RELEASE_NAME}/${RELEASE_VERSION}/Dev",
+		"previousTasks": ["Deploy Applications"],
+		"isDisabled": false,
+		"name": "Send Message",
+		"kind": "Task",
+		"plugin": "Slack/1.0",
+		"endpoint": "SLack",
+		"parameters": {
+			"channel": "",
+			"message": "Hello World",
+			"username": "CDDirector"
+		},
+		"type": "Post message"
+	},
+	{
+		"phase": "${RELEASE_NAME}/${RELEASE_VERSION}/Test",
+		"isDisabled": false,
+		"name": "Create Change Request",
+		"kind": "Task",
+		"plugin": "ServiceNow/2.1",
+		"endpoint": "SNOW-Admin",
+		"parameters": {
+			"changeRequestId": "%changeRequestId%",
+			"shortDescription": "New Build deployment"
+		},
+		"type": "Create Change Request"
+	},
+	{
+		"phase": "${RELEASE_NAME}/${RELEASE_VERSION}/Test",
+		"previousTasks": ["Create Change Request"],
+		"isDisabled": false,
+		"name": "Deploy Applications",
+		"kind": "Task",
+		"plugin": "TestTask/1.0",
+		"endpoint": "Test Plugin",
+		"parameters": {
+			"detailed-status": "very good",
+			"shall-fail": "false",
+			"number-iterations": "1",
+			"status": "good"
+		},
+		"type": "Run Test"
+	},
+	{
+		"phase": "${RELEASE_NAME}/${RELEASE_VERSION}/Test",
+		"previousTasks": ["Deploy Applications"],
+		"isDisabled": false,
+		"name": "Send Message",
+		"kind": "Task",
+		"plugin": "Slack/1.0",
+		"endpoint": "SLack",
+		"parameters": {
+			"channel": "",
+			"message": "Hello World",
+			"username": "CDDirector"
+		},
+		"type": "Post message"
+	},
+	{
+		"phase": "${RELEASE_NAME}/${RELEASE_VERSION}/Prodution",
+		"isDisabled": false,
+		"name": "Create Change Request",
+		"kind": "Task",
+		"plugin": "ServiceNow/2.1",
+		"endpoint": "SNOW-Admin",
+		"parameters": {
+			"changeRequestId": "%changeRequestId%",
+			"shortDescription": "New Build deployment"
+		},
+		"type": "Create Change Request"
+	},
+	{
+		"phase": "${RELEASE_NAME}/${RELEASE_VERSION}/Prodution",
+		"previousTasks": ["Create Change Request"],
+		"isDisabled": false,
+		"name": "Deploy Applications",
+		"kind": "Task",
+		"plugin": "TestTask/1.0",
+		"endpoint": "Test Plugin",
+		"parameters": {
+			"detailed-status": "very good",
+			"shall-fail": "false",
+			"number-iterations": "1",
+			"status": "good"
+		},
+		"type": "Run Test"
+	},
+	{
+		"phase": "${RELEASE_NAME}/${RELEASE_VERSION}/Prodution",
+		"previousTasks": ["Deploy Applications"],
+		"isDisabled": false,
+		"name": "Send Message",
+		"kind": "Task",
+		"plugin": "Slack/1.0",
+		"endpoint": "SLack",
+		"parameters": {
+			"channel": "",
+			"message": "Hello World",
+			"username": "CDDirector"
+		},
+		"type": "Post message"
+	}]
+}
