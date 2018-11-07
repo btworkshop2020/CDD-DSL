@@ -1,4 +1,5 @@
 {
+	
 	"objects": [{
 		"application": "Local|Mobile",
 		"name": "${ApplicationVersion_Mobile}",
