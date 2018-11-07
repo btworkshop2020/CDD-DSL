@@ -65,7 +65,7 @@
 		"kind": "ReleaseToken"
 	},
 	{
-		"release": "${RELEASE_NAME}/${AssafRELEASE_VERSION}",
+		"release": "${RELEASE_NAME}/${RELEASE_VERSION}",
 		"scope": "PHASE_SCOPE",
 		"value": "CTASK0030098",
 		"name": "changeTaskId",
