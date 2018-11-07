@@ -5,6 +5,7 @@
 		"name": "${ApplicationVersion_Mobile}",
 		"kind": "ApplicationVersion"
 	},
+		    
 	{
 		"application": "Local|Web",
 		"name": "${ApplicationVersion_Web}",
