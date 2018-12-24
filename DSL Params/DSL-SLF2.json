@@ -1,0 +1,56 @@
+{
+	"parameters": [
+		{
+			"name": "RITM_Number",
+			"value": "RITM0439903"
+		},
+		{
+			"name": "item",
+			"value": "Server Planning and Engineering Request"
+		},
+		{
+			"name": "requester",
+			"value": "Karthik Kannan"
+		},
+		{
+			"name": "requested for",
+			"value": "Karthik Kannan"
+		},
+		{
+			"name": "assignment group",
+			"value": ""
+		},
+		{
+			"name": "assignee",
+			"value": ""
+		},
+		{
+			"name": "negotiated solution date",
+			"value": "2019-01-02"
+		},
+		{
+			"name": "state",
+			"value": "Open"
+		},
+		{
+			"name": "os platform",
+			"value": "Wintel"
+		},
+		{
+			"name": "type of request",
+			"value": "Estimate"
+		},
+		{
+			"name": "description",
+			"value": "test file for CDD"
+		},
+		{
+			"name": "server build number",
+			"value": "RITM0022435"
+		}
+	],
+	"reference": {
+		"filename": "GardenPipeline.json",
+		"fileSource": "GardenPipelineReference"
+	}
+}
