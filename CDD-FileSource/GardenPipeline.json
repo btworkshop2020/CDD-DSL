@@ -1,239 +1,49 @@
 {
 	"objects": [
 		{
-			"application": "Local|Music UI",
-			"name": "2.3",
+			"application": "Local|nbaApp10",
+			"name": "10",
 			"kind": "ApplicationVersion"
 		},
 		{
-			"application": "Local|Music Backend",
-			"name": "6.4",
-			"kind": "ApplicationVersion"
-		},
-		{
-			"application": "Local|Music IMS",
-			"name": "6.5",
-			"kind": "ApplicationVersion"
-		},
-		{
+			"version": "DD120",
 			"runOnCreation": false,
-			"ownerParties": [
-				"ashlomitest@gmail.com",
-				"mi.hagamad.sheli@gmail.com"
-			],
-			"memberParties": [
-				"ashlomitest@gmail.com",
-				"Music Team"
-			],
 			"applicationVersions": [
-				"Local|Music IMS/6.5",
-				"Local|Music Backend/6.4",
-				"Local|Music UI/2.3"
+				"Local|nbaApp10/10"
 			],
-			"version": "v666",
-			"name": "Music Team FY19Q4",
+			"ownerParties": [
+				"superuser@ca.com"
+			],
+			"name": "nbaRelease",
 			"kind": "Release"
 		},
 		{
-			"release": "Music Team FY19Q4/v666",
-			"scope": "PHASE_SCOPE",
-			"value": "",
-			"name": "ID-Num-Token",
-			"kind": "ReleaseToken"
-		},
-		{
-			"isApprovalRequired": false,
-			"approvalGate": "MANUAL",
-			"ownerParties": [
-				"ashlomitest@gmail.com"
+			"environments": [
+				"Env1"
 			],
 			"skipTasksWithUnchangedApplications": false,
-			"release": "Music Team FY19Q4/v666",
-			"environments": [
-				"Test"
-			],
-			"name": "Test",
+			"approvalGate": "MANUAL",
+			"release": "nbaRelease/DD120",
+			"isApprovalRequired": false,
+			"name": "p10",
 			"kind": "Phase"
 		},
 		{
-			"isApprovalRequired": false,
-			"approvalGate": "MANUAL",
-			"previousPhase": "Test",
-			"skipTasksWithUnchangedApplications": false,
-			"release": "Music Team FY19Q4/v666",
-			"environments": [
-				"UAT"
+			"tags": [
+				"blaze"
 			],
-			"name": "UAT",
-			"kind": "Phase"
-		},
-		{
-			"isApprovalRequired": false,
-			"approvalGate": "MANUAL",
-			"previousPhase": "UAT",
-			"skipTasksWithUnchangedApplications": false,
-			"release": "Music Team FY19Q4/v666",
-			"environments": [
-				"Production"
+			"applicationVersions": [
+				"Local|nbaApp10/10"
 			],
-			"name": "Production",
-			"kind": "Phase"
-		},
-		{
-			"phase": "Music Team FY19Q4/v666/Test",
+			"phase": "nbaRelease/DD120/p10",
 			"isDisabled": false,
-			"name": "Open Ticket Jira",
+			"name": "tar",
 			"kind": "Task",
-			"plugin": "Jira/1.2.1",
-			"endpoint": "Music - Jira",
+			"type": "Run Adaptive Testing",
 			"parameters": {
-				"issueType": "Sub-task",
-				"summary": "This is a test",
-				"projectKey": "AP",
-				"advanced": "false"
+				"changeId": "10"
 			},
-			"type": "Create JIRA Issue"
-		},
-		{
-			"previousTasks": [
-				"Open Ticket Jira"
-			],
-			"phase": "Music Team FY19Q4/v666/Test",
-			"isDisabled": false,
-			"name": "SNOW open change",
-			"kind": "Task",
-			"plugin": "ServiceNow/2.1",
-			"endpoint": "Music - ServiceNow-ven01720",
-			"parameters": {
-				"shortDescription": "This is a test"
-			},
-			"type": "Create Change Request"
-		},
-		{
-			"previousTasks": [
-				"SNOW open change"
-			],
-			"ownerParties": [
-				"ashlomitest@gmail.com"
-			],
-			"phase": "Music Team FY19Q4/v666/Test",
-			"isDisabled": false,
-			"name": "Deploy Web App",
-			"kind": "Task"
-		},
-		{
-			"previousTasks": [
-				"Deploy Web App"
-			],
-			"phase": "Music Team FY19Q4/v666/Test",
-			"isDisabled": false,
-			"name": "Deploy Reports App",
-			"kind": "Task"
-		},
-		{
-			"previousTasks": [
-				"Deploy Reports App"
-			],
-			"phase": "Music Team FY19Q4/v666/Test",
-			"isDisabled": false,
-			"name": "Run Tests",
-			"kind": "Task"
-		},
-		{
-			"previousTasks": [
-				"Run Tests"
-			],
-			"phase": "Music Team FY19Q4/v666/Test",
-			"isDisabled": false,
-			"name": "Deploy by REST",
-			"kind": "Task",
-			"plugin": "REST/2.1",
-			"endpoint": "Music- REST Deploy Test",
-			"parameters": {
-				"method": "GET",
-				"statusCheck": "false"
-			},
-			"type": "REST"
-		},
-		{
-			"phase": "Music Team FY19Q4/v666/UAT",
-			"isDisabled": false,
-			"name": "Deploy Web App",
-			"kind": "Task"
-		},
-		{
-			"previousTasks": [
-				"Deploy Web App"
-			],
-			"phase": "Music Team FY19Q4/v666/UAT",
-			"isDisabled": false,
-			"name": "Deploy Reports App",
-			"kind": "Task"
-		},
-		{
-			"previousTasks": [
-				"Deploy Reports App"
-			],
-			"phase": "Music Team FY19Q4/v666/UAT",
-			"isDisabled": false,
-			"name": "Run Tests",
-			"kind": "Task"
-		},
-		{
-			"previousTasks": [
-				"Run Tests"
-			],
-			"phase": "Music Team FY19Q4/v666/UAT",
-			"isDisabled": false,
-			"name": "Deploy by REST",
-			"kind": "Task",
-			"plugin": "REST/2.1",
-			"endpoint": "Music- REST Deploy UAT",
-			"parameters": {
-				"method": "GET",
-				"statusCheck": "false"
-			},
-			"type": "REST"
-		},
-		{
-			"phase": "Music Team FY19Q4/v666/Production",
-			"isDisabled": false,
-			"name": "Deploy Web App",
-			"kind": "Task"
-		},
-		{
-			"previousTasks": [
-				"Deploy Web App"
-			],
-			"phase": "Music Team FY19Q4/v666/Production",
-			"isDisabled": false,
-			"name": "Deploy Reports App",
-			"kind": "Task"
-		},
-		{
-			"previousTasks": [
-				"Deploy Reports App"
-			],
-			"phase": "Music Team FY19Q4/v666/Production",
-			"isDisabled": false,
-			"name": "Run Tests",
-			"kind": "Task"
-		},
-		{
-			"previousTasks": [
-				"Run Tests"
-			],
-			"phase": "Music Team FY19Q4/v666/Production",
-			"isDisabled": false,
-			"name": "Deploy by REST",
-			"kind": "Task",
-			"plugin": "REST/2.1",
-			"endpoint": "Music- REST Deploy Prod",
-			"parameters": {
-				"method": "GET",
-				"statusCheck": "false"
-			},
-			"type": "REST"
+			"plugin": "ADAPTIVE TESTING/1.0.2"
 		}
 	]
 }
