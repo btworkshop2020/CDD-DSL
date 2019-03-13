@@ -34,7 +34,7 @@
 				"Alan-Dev-Team"
 			],
 			"applicationVersions": [
-				"Local|Local|AA-Web Banking/${WebBankingAppVersion}",
+				"Local|AA-Web Banking/${WebBankingAppVersion}",
 				"Local|AA-Mobile Banking/${MobileBankingAppVersion}"
 			],
 			"runOnCreation": false,
