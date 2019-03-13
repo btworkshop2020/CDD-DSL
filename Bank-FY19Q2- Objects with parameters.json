@@ -210,7 +210,7 @@
 			"type": "Run Job template",
 			"parameters": {
 				"buildOrChangeId": "%AA-Web Banking.last_successful_change%",
-				"templateName": "Assaf",
+				"templateName": "${TemplateName}",
 				"templateParameters": "cddartifact/info/xxx/%AA-Web Banking.last_successful_change%",
 				"job_id": "%WebDeployJobID%"
 			}
