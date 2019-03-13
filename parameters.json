@@ -1,0 +1,24 @@
+{
+	"parameters": [{
+			"name": "WebBankingAppVersion",
+			"value": "5.1"
+		},
+		{
+			"name": "MobileBankingAppVersion",
+			"value": "5.1"
+		},
+		{
+			"name": "ReleaseVersion",
+			"value": "5.1"
+		},
+		{
+			"name": "ReleaseName",
+			"value": "Banking-FY19Q2"
+		}
+	],
+	"reference": {
+		"fileName": "Bank-FY19Q2- Objects with parameters.json",
+		"fileSource": "assaf-git"
+	}
+
+}
