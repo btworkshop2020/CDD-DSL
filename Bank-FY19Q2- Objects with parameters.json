@@ -157,7 +157,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/Test",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"stop"
@@ -197,7 +197,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/Test",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Verify Mobile  Security Scans Status - Copy"
@@ -239,7 +239,7 @@
 			"phase": "${ReleaseName}/${ReleaseVersion}/Test",
 			"applicationVersions": [
 				"Local|AA-Mobile Banking/${MobileBankingAppVersion}",
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Deploy AA-Mobile_Banking"
@@ -262,7 +262,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/Test",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Run ALM Tests"
@@ -302,7 +302,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/QA",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"isDisabled": false,
 			"name": "Create SNOW Ticket for WEB",
@@ -337,7 +337,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/QA",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Create SNOW Ticket for Mobile"
@@ -381,7 +381,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/QA",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Wait for Mobile Ticket approval"
@@ -422,7 +422,7 @@
 			"phase": "${ReleaseName}/${ReleaseVersion}/QA",
 			"applicationVersions": [
 				"Local|AA-Mobile Banking/${MobileBankingAppVersion}",
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Deploy AA-Mobile_Banking"
@@ -445,7 +445,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/QA",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Run ALM Tests"
@@ -485,7 +485,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/QA",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Inform on  Successful Mobile Deployment"
@@ -525,7 +525,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/Production",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"isDisabled": false,
 			"name": "Create SNOW Ticket for WEB",
@@ -560,7 +560,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/Production",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Create SNOW Ticket for Mobile"
@@ -604,7 +604,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/Production",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Wait for Mobile Ticket approval"
@@ -644,7 +644,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/Production",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Deploy AA-Mobile_Banking"
@@ -684,7 +684,7 @@
 		{
 			"phase": "${ReleaseName}/${ReleaseVersion}/Production",
 			"applicationVersions": [
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Inform on  Successful Mobile Deployment"
@@ -725,7 +725,7 @@
 			"phase": "${ReleaseName}/${ReleaseVersion}/Production",
 			"applicationVersions": [
 				"Local|AA-Mobile Banking/${MobileBankingAppVersion}",
-				"Local|AA-Web Bankin/${WebBankingAppVersion}"
+				"Local|AA-Web Banking/${WebBankingAppVersion}"
 			],
 			"previousTasks": [
 				"Close Change Mobile Tickets"
