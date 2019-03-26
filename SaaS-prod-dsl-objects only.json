@@ -17,7 +17,7 @@
 			"kind": "ApplicationVersion"
 		},
 		{
-			"runOnCreation": false,
+			"runOnCreation": true,
 			"ownerParties": [
 				"ashlomitest@gmail.com",
 				"mi.hagamad.sheli@gmail.com"
