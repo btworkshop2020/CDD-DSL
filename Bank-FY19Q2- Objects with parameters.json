@@ -12,21 +12,6 @@
 			"kind": "ApplicationVersion"
 		},
 		{
-			"applicationVersion": "Local|AA-Mobile Banking/${MobileBankingAppVersion}",
-			"name": "Mobile Changes (copy)",
-			"kind": "ContentSource",
-			"endpoint": "CA Test Workspace shlas01",
-			"plugin": "Rally Platform/2.2",
-			"type": "Add Content",
-			"parameters": {
-				"release": "AB-FY19Q2-Digital",
-				"project": "TradingAppCD",
-				"user_story_status": "Defined",
-				"type": "User Story",
-				"tags": "mobile"
-			}
-		},
-		{
 			"ownerParties": [
 				"one@acme.com"
 			],
