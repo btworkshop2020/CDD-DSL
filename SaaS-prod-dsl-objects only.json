@@ -1,0 +1,258 @@
+{
+	
+	"objects": [
+		{
+			"application": "Local|Music UI",
+			"name": "${musicUiAppVersion}",
+			"kind": "ApplicationVersion"
+		},
+		{
+			"application": "Local|Music Backend",
+			"name": "${musicBackendAppVersion}",
+			"kind": "ApplicationVersion"
+		},
+		{
+			"application": "Local|Music IMS",
+			"name": "${musivImsReleaseVersion}",
+			"kind": "ApplicationVersion"
+		},
+		{
+			"runOnCreation": false,
+			"ownerParties": [
+				"ashlomitest@gmail.com",
+				"mi.hagamad.sheli@gmail.com"
+			],
+			"memberParties": [
+				"ashlomitest@gmail.com",
+				"Music Team"
+			],
+			"applicationVersions": [
+				"Local|Music IMS/${musivImsReleaseVersion}",
+				"Local|Music Backend/${musicBackendAppVersion}",
+				"Local|Music UI/${musicUiAppVersion}"
+			],
+			"version": "${ReleaseVersion}5",
+			"name": "${ReleaseName}",
+			"kind": "Release"
+		},
+		{
+			"release": "${ReleaseName}/${ReleaseVersion}5",
+			"scope": "PHASE_SCOPE",
+			"value": "",
+			"name": "ID-Num-Token",
+			"kind": "ReleaseToken"
+		},
+		{
+			"isApprovalRequired": false,
+			"skipTasksWithUnchangedApplications": false,
+			"approvalGate": "MANUAL",
+			"ownerParties": [
+				"ashlomitest@gmail.com"
+			],
+			"release": "${ReleaseName}/${ReleaseVersion}5",
+			"environments": [
+				"Test"
+			],
+			"name": "Test",
+			"kind": "Phase"
+		},
+		{
+			"isApprovalRequired": false,
+			"skipTasksWithUnchangedApplications": false,
+			"approvalGate": "MANUAL",
+			"previousPhase": "Test",
+			"release": "${ReleaseName}/${ReleaseVersion}5",
+			"environments": [
+				"UAT"
+			],
+			"name": "UAT",
+			"kind": "Phase"
+		},
+		{
+			"isApprovalRequired": false,
+			"skipTasksWithUnchangedApplications": false,
+			"approvalGate": "MANUAL",
+			"previousPhase": "UAT",
+			"release": "${ReleaseName}/${ReleaseVersion}5",
+			"environments": [
+				"Production"
+			],
+			"name": "Production",
+			"kind": "Phase"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/Test",
+			"isDisabled": false,
+			"name": "Open Ticket Jira",
+			"kind": "Task",
+			"plugin": "Jira/1.2.1",
+			"endpoint": "Music - Jira",
+			"parameters": {
+				"issueType": "Sub-task",
+				"summary": "This is a test",
+				"projectKey": "AP",
+				"advanced": "false"
+			},
+			"type": "Create JIRA Issue"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/Test",
+			"isDisabled": false,
+			"previousTasks": [
+				"Open Ticket Jira"
+			],
+			"name": "SNOW open change",
+			"kind": "Task",
+			"plugin": "ServiceNow/2.1",
+			"endpoint": "Music - ServiceNow-ven01720",
+			"parameters": {
+				"shortDescription": "This is a test"
+			},
+			"type": "Create Change Request"
+		},
+		{
+			"ownerParties": [
+				"ashlomitest@gmail.com"
+			],
+			"phase": "${ReleaseName}/${ReleaseVersion}5/Test",
+			"isDisabled": false,
+			"previousTasks": [
+				"SNOW open change"
+			],
+			"name": "Deploy Web App",
+			"kind": "Task"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/Test",
+			"isDisabled": false,
+			"previousTasks": [
+				"Deploy Web App"
+			],
+			"name": "Deploy Reports App",
+			"kind": "Task"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/Test",
+			"isDisabled": false,
+			"previousTasks": [
+				"Deploy Reports App"
+			],
+			"name": "Run Tests",
+			"kind": "Task"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/Test",
+			"isDisabled": false,
+			"previousTasks": [
+				"Run Tests"
+			],
+			"name": "Deploy by REST",
+			"kind": "Task",
+			"plugin": "REST/2.1",
+			"endpoint": "Music- REST Deploy Test",
+			"parameters": {
+				"method": "GET",
+				"statusCheck": "false"
+			},
+			"type": "REST"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/UAT",
+			"isDisabled": false,
+			"name": "Deploy Web App",
+			"kind": "Task"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/UAT",
+			"isDisabled": false,
+			"previousTasks": [
+				"Deploy Web App"
+			],
+			"name": "Deploy Reports App",
+			"kind": "Task"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/UAT",
+			"isDisabled": false,
+			"previousTasks": [
+				"Deploy Reports App"
+			],
+			"name": "Run Tests",
+			"kind": "Task"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/UAT",
+			"isDisabled": false,
+			"previousTasks": [
+				"Run Tests"
+			],
+			"name": "Deploy by REST",
+			"kind": "Task",
+			"plugin": "REST/2.1",
+			"endpoint": "Music- REST Deploy UAT",
+			"parameters": {
+				"method": "GET",
+				"statusCheck": "false"
+			},
+			"type": "REST"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/UAT",
+			"isDisabled": false,
+			"previousTasks": [
+				"Deploy by REST"
+			],
+			"name": "Jira",
+			"kind": "Task",
+			"plugin": "Jira/1.2.1",
+			"endpoint": "Music - Jira",
+			"parameters": {
+				"issueType": "Story",
+				"summary": "This is a test story",
+				"projectKey": "AP",
+				"advanced": "false"
+			},
+			"type": "Create JIRA Issue"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/Production",
+			"isDisabled": false,
+			"name": "Deploy Web App",
+			"kind": "Task"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/Production",
+			"isDisabled": false,
+			"previousTasks": [
+				"Deploy Web App"
+			],
+			"name": "Deploy Reports App",
+			"kind": "Task"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/Production",
+			"isDisabled": false,
+			"previousTasks": [
+				"Deploy Reports App"
+			],
+			"name": "Run Tests",
+			"kind": "Task"
+		},
+		{
+			"phase": "${ReleaseName}/${ReleaseVersion}5/Production",
+			"isDisabled": false,
+			"previousTasks": [
+				"Run Tests"
+			],
+			"name": "Deploy by REST",
+			"kind": "Task",
+			"plugin": "REST/2.1",
+			"endpoint": "Music- REST Deploy Prod",
+			"parameters": {
+				"method": "GET",
+				"statusCheck": "false"
+			},
+			"type": "REST"
+		}
+	]
+}
