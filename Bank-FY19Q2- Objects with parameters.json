@@ -162,7 +162,7 @@
 			"previousTasks": [
 				"stop"
 			],
-			"isDisabled": "${NotDisabled}",
+			"isDisabled": true,
 			"name": "Verify WEB Security Scans Status",
 			"kind": "Task",
 			"endpoint": "Sonar-AS",
