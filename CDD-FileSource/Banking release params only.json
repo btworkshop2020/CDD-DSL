@@ -1,23 +1,23 @@
 {
 "parameters": [{
 			"name": "musicUiAppVersion",
-			"value": "11"
+			"value": "12"
 		},
 		{
 			"name": "musicBackendAppVersion",
-			"value": "7.1"
+			"value": "8.0"
 		},
 		{
 			"name": "musivImsReleaseVersion",
-			"value": "61"
+			"value": "62"
 		},
 		{
 			"name": "ReleaseVersion",
-			"value": "v65"
+			"value": "v66"
 		},
 		{
 			"name": "ReleaseName",
-			"value": "Banking-FY19Q4"
+			"value": "Banking-FY19Q4.1"
 		}
 	],
 	"reference": {
