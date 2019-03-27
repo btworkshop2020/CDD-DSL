@@ -1,0 +1,28 @@
+{
+"parameters": [{
+			"name": "musicUiAppVersion",
+			"value": "10"
+		},
+		{
+			"name": "musicBackendAppVersion",
+			"value": "7.0"
+		},
+		{
+			"name": "musivImsReleaseVersion",
+			"value": "60"
+		},
+		{
+			"name": "ReleaseVersion",
+			"value": "v60"
+		},
+		{
+			"name": "ReleaseName",
+			"value": "Banking-FY19Q3"
+		}
+	],
+	"reference": {
+		"fileName": "SaaS-prod-dsl-objects only.json",
+		"fileSource": "Ops Team DSL"
+	}
+
+}	
