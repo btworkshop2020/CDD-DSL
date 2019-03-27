@@ -1,0 +1,28 @@
+{
+"parameters": [{
+			"name": "musicUiAppVersion",
+			"value": "20.1"
+		},
+		{
+			"name": "musicBackendAppVersion",
+			"value": "9.0"
+		},
+		{
+			"name": "musicImsReleaseVersion",
+			"value": "65.2"
+		},
+		{
+			"name": "NewReleaseVersion",
+			"value": "v100"
+		},
+		{
+			"name": "NewReleaseName",
+			"value": "Music-FY19Q3"
+		}
+	],
+	"reference": {
+		"fileName": "Music Release DSL Template.json",
+		"fileSource": "Ops Team DSL"
+	}
+
+}	
