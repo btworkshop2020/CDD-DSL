@@ -1,7 +1,28 @@
 {
-	"Parameters": [
+"parameters": [{
+			"name": "musicUiAppVersion",
+			"value": "2.3"
+		},
 		{
-			"Name": "T1-Value",
-			"Value": "assaf"
+			"name": "musicBackendAppVersion",
+			"value": "6.6"
+		},
+		{
+			"name": "musivImsReleaseVersion",
+			"value": "57"
+		},
+		{
+			"name": "ReleaseVersion",
+			"value": "v58"
+		},
+		{
+			"name": "ReleaseName",
+			"value": "Banking-FY19Q3"
 		}
-}
+	],
+	"reference": {
+		"fileName": "SDSL_Tst_2.json",
+		"fileSource": "GIT-Auto"
+	}
+
+}	
