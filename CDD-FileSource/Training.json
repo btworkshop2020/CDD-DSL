@@ -1,0 +1,25 @@
+{
+"parameters": [{
+			"name": "T1Value",
+			"value": "2.3"
+		},
+		{
+			"name": "ReleaseVersion",
+			"value": "V104"
+		},
+		{
+			"name": "AppVersion",
+			"value": "100"
+		},
+		
+		{
+			"name": "ReleaseName",
+			"value": "Banking-FY19Q3"
+		}
+	],
+	"reference": {
+		"fileName": "Music-FY19Q3.1_-_Copy_v102.json",
+		"fileSource": "CDD Training"
+	}
+
+}	
