@@ -1,0 +1,28 @@
+{
+"parameters": [{
+			"name": "musicUiAppVersion",
+			"value": "1905-1"
+		},
+		{
+			"name": "musicBackendAppVersion",
+			"value": "1905-1"
+		},
+		{
+			"name": "musicImsReleaseVersion",
+			"value": "1905-1"
+		},
+		{
+			"name": "NewReleaseVersion",
+			"value": "Sprint-2"
+		},
+		{
+			"name": "NewReleaseName",
+			"value": "Music-FY19Q4"
+		}
+	],
+	"reference": {
+		"fileName": "20190523 Music-Release-Template.json",
+		"fileSource": "Release Discovery"
+	}
+
+}	
