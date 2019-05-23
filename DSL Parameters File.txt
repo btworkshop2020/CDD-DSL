@@ -7,7 +7,7 @@
   "parameters": [
     {
       "name": "",
-      "value": ""
+      "value": " "
     },
     {
       "name": "",
