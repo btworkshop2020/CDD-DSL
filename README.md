@@ -1,1 +1,1 @@
-# CDD Release DSL Parameters Repository
+# CDD Release DSL Template Repository
