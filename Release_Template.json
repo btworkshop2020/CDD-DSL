@@ -173,7 +173,7 @@
 			"isSkipTaskOnFailure": false,
 			"name": "Deploy Flight Pricing",
 			"kind": "Task",
-			"endpoint": "Gil_Tomcat",
+			"endpoint": "Flight Pricing Tomcat",
 			"plugin": "Tomcat/1.0",
 			"parameters": {
 				"tomcatContextPath": "/dummy",
