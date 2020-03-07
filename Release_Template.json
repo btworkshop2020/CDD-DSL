@@ -19,7 +19,7 @@
 			"applicationVersion": "Local|FlightPricing/${FLIGHT_PRICING_APPLICATION_VERSION}",
 			"name": "End_of_Feb",
 			"kind": "ContentSource",
-			"endpoint": "Yochay Endpoint",
+			"endpoint": "Rally Endpoint",
 			"plugin": "Rally®/2.11",
 			"parameters": {
 				"release": "Digital BizOps V1.0",
